@@ -85,7 +85,7 @@ class MultiGoalsParkingEnv(ParkingEnv):
         :return: the corresponding reward
         """
         min_dist = float("inf")
-        for goal : desired_goal:
+        for goal in desired_goal:
             min_dist = min(min_dist, np.power(np.dot(np.abs(achieved_goal - desired_goal), self.REWARD_WEIGHTS), p))
         return -min_dist
 
